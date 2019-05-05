@@ -13,11 +13,17 @@
 ActiveRecord::Schema.define(version: 2019_05_05_090053) do
 
   create_table "boards", force: :cascade do |t|
-    t.string "title"
-    t.string "slug"
+    t.string "title", null: false
+    t.string "slug", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["slug"], name: "index_boards_on_slug"
+    t.index ["slug"], name: "index_boards_on_slug", unique: true
+  end
+
+  create_table "boards_users", id: false, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "board_id", null: false
+    t.index ["user_id"], name: "index_boards_users_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

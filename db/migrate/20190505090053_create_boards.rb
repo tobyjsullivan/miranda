@@ -1,8 +1,8 @@
 class CreateBoards < ActiveRecord::Migration[5.2]
   def change
     create_table :boards do |t|
-      t.string :title
-      t.string :slug
+      t.string :title, null: false
+      t.string :slug, null: false
 
       t.timestamps
     end
@@ -11,6 +11,6 @@ class CreateBoards < ActiveRecord::Migration[5.2]
       t.index :user_id
     end
 
-    add_index :boards, :slug
+    add_index :boards, :slug, unique: true
   end
 end

@@ -1,0 +1,17 @@
+<h1>Create Board</h1>
+
+<% if @board.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+    <% @board.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for @board, url: { action: 'create' }  do |f| %>
+  <p>Title: <%= f.text_field :title %></p>
+  <p>Slug: <%= f.text_field :slug %></p>
+  <p><%= f.submit %></p>
+<% end %>
