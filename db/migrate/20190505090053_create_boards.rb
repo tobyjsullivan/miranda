@@ -6,6 +6,11 @@ class CreateBoards < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+
+    create_join_table :users, :boards do |t|
+      t.index :user_id
+    end
+
     add_index :boards, :slug
   end
 end
