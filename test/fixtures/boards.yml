@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  slug: MyString
+  title: Board One
+  slug: board-one
 
 two:
-  title: MyString
-  slug: MyString
+  title: Board Two
+  slug: board-two

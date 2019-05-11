@@ -1,5 +1,6 @@
 class BoardsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_board, only: [:show]
 
   def new
     @board = Board.new
@@ -21,9 +22,18 @@ class BoardsController < ApplicationController
     @boards = current_user.boards
   end
 
+  # GET /boards/1
+  # GET /boards/1.json
+  def show
+  end
+
   private
 
   def create_params
     params.require(:board).permit(:title, :slug)
+  end
+
+  def set_board
+    @board = Board.find(params[:id])
   end
 end

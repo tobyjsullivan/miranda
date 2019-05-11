@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @board.title %>
+</p>
+
+<p>
+  <strong>Posts:</strong>
+  <%= link_to 'New Post', new_board_post_path(board_id: @board) %>
+  <div>
+  <% @board.posts.each do |p| %>
+    <p><%= p.id %>: <%= link_to p.title, p.url %></p>
+  <% end %>
+  </div>
+</p>
+
+<%= link_to 'Back', boards_path %>

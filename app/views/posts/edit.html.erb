@@ -1,0 +1,6 @@
+<h1>Editing Post</h1>
+
+<%= render 'form', board: @post.board, post: @post %>
+
+<%= link_to 'Show', board_post_path(@post.board, @post) %> |
+<%= link_to 'Back', board_posts_path %>

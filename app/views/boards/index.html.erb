@@ -2,6 +2,6 @@
 <%= link_to 'Create Board', controller: 'boards', action: 'new' %>
 <div>
   <% @boards.each do |b| %>
-    <p><%= b.id %>: <%= b.title %></p>
+    <p><%= b.id %>: <%= link_to b.title, b %></p>
   <% end %>
 </div>
