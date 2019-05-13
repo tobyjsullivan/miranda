@@ -1,0 +1,8 @@
+<p>Current invitations:</p>
+<div>
+  <ul>
+    <% @invitations.each do |invite| %>
+      <li><%= invite.token %>, Expires: <%= invite.expires %></li>
+    <% end %>
+  </ul>
+</div>

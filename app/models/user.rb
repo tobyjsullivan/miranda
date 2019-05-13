@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_and_belongs_to_many :boards
+
+  has_many :invitations, foreign_key: 'inviter_id'
 end

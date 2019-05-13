@@ -3,6 +3,8 @@
   <%= @board.title %>
 </p>
 
+<p><%= link_to 'Invite someone', {controller: 'invitations', action: :create, board_id: @board}, method: :post %></p>
+
 <p>
   <strong>Posts:</strong>
   <%= link_to 'New Post', new_board_post_path(board_id: @board) %>
