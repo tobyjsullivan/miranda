@@ -4,4 +4,5 @@
   <p>Have an account? <a href="/users/sign_in">Sign In</a></p>
 <% else %>
   <p><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></p>
+  <%= render 'boards/list', boards: @user.boards %>
 <% end %>
