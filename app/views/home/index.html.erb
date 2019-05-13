@@ -1,4 +1,7 @@
 <h1>Hello, world!</h1>
-<p><a href="/users/sign_up">Sign Up</a></p>
-<p>Have an account? <a href="/users/sign_in">Sign In</a></p>
-<p><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></p>
+<% if @user == nil %>
+  <p><a href="/users/sign_up">Sign Up</a></p>
+  <p>Have an account? <a href="/users/sign_in">Sign In</a></p>
+<% else %>
+  <p><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></p>
+<% end %>
